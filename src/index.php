@@ -74,7 +74,7 @@
                 <nav id="mainNav">
                     <ul>
                         <li navid=0><a href="/?page=home"> Home </a></li>
-                        <li navid=1><a href="/?page=attractions"> Attractions &amp; Travel </a></li>
+                        <li navid=1><a href="/?page=attractions"> Food </a></li>
                         <li navid=2><a href="/?page=contact"> Contact </a></li>
                     </ul>
                 </nav>
