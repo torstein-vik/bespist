@@ -1,0 +1,6 @@
+var gallery = [
+    {
+        "path": "res/placeholder.png",
+        "text": "Placeholder"
+    }
+]
