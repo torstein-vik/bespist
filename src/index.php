@@ -95,11 +95,13 @@
             </div>
         </div>
 
-        <modal id="login-modal" title="Logg inn">
-            ejsoifs
-        </modal>
-        <modal id="register-modal" title="Registrer deg">
-            jsoiufdhsa
-        </modal>
+
     </body>
+    <modal id="login-modal" title="Logg inn">
+        ejsoifs
+    </modal>
+    <modal id="register-modal" title="Registrer deg">
+        jsoiufdhsa
+    </modal>
+    <coverpane style="z-index: -1"> </coverpane>
 </html>

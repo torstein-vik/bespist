@@ -424,6 +424,10 @@ function SendEpost(email){
 
 function initModalSystem(){
     $(".modalbutton").click(function(){
-        $("modal").animate({top: "calc(50vh - 50% + 50% / 2)"});
+        $("modal").animate({top: 100});
+        $("body > div").css({filter: "blur(5px)"});
+        $("coverpane").css({"z-index":10000});
     });
+
+
 }
