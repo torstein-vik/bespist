@@ -1,0 +1,165 @@
+html{
+    font-family: 'Verdana';
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(107, 120, 138);
+}
+
+
+a{
+    color: black;
+}
+
+#header{
+    height: calc();
+}
+
+#global{
+    margin: 10px auto;
+
+    padding-bottom: 20px;
+
+    border-radius: 3px;
+
+    width: 60%;
+    min-width: 720px;
+    max-width: 860px;
+
+    background-color: white;
+
+    box-shadow: 0 0 10px darkslategray;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    height: calc(100vh - 20px - 20px - 20px - 200px);
+}
+
+#global::-webkit-scrollbar {
+    width: 6px;
+    padding-top: 5px;
+}
+
+#global::-webkit-scrollbar-thumb {
+    background: #4C4;
+    border-radius: 3px;
+}
+
+#global::-webkit-scrollbar-thumb:hover{
+    background: #3A3;
+}
+
+h1{
+    font-family: Oxygen;
+    font-size: 400%;
+    font-weight: 100;
+
+    padding: 10px 0;
+
+    text-align: center;
+    width:100%;
+    margin: 0;
+}
+
+
+#content{
+    padding: 80px;
+    padding-top: 0;
+
+    line-height: 2;
+}
+
+.selection{
+    display: flex;
+    justify-content: left;
+    flex-flow: row wrap;
+
+    margin-bottom: 10px;
+}
+
+#subject{
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.selection > div{
+    margin: 0 10px 0 10px;
+    /*flex-basis: 0;
+    flex-grow: 1;*/
+    text-align: center;
+
+    width: 28%;
+    margin-bottom: 10px;
+
+    cursor: pointer;
+
+    background-color: #4C4;
+    box-shadow: 0 0 2px darkslategray;
+
+    transition: background-color .5s;
+}
+
+.selection > div:hover, .selection > div.active{
+    background-color: #3A3;
+}
+
+.selectionelement{
+    margin: 10px auto;
+    box-shadow: 0px 1px 3px darkslategray;
+    width: calc(100% - 40px);
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 110%;
+    margin-top: 10px;
+}
+
+
+#slide{
+    width: 100%;
+    height: 250px;
+}
+
+#slide_text{
+    text-align: center;
+}
+
+video{
+    margin: 10px;
+    width:calc(100% - 20px);
+}
+
+.content-img{
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+
+
+
+.remove{
+    font-size: 200%;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+#basket table{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+#basket td{
+    padding: 10px;
+    border: 1px solid black;
+
+}
+
+#basket tr:nth-child(odd){
+    background-color: lightgreen;
+}
