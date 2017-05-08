@@ -25,6 +25,8 @@ $(function(){
     // Refresh the basket-page
     refreshBasket();
 
+    initModalSystem();
+
     // On submit method for complete purchase form
     $("#completepurchase").on('submit', SendBestilling);
 
@@ -417,4 +419,11 @@ function SendBestilling(e){
 // Simulated version of sending an email. Just prints it to console for now.
 function SendEpost(email){
     console.log(email);
+}
+
+
+function initModalSystem(){
+    $(".modalbutton").click(function(){
+        $("modal").animate({top: "calc(50vh - 50% + 50% / 2)"});
+    });
 }

@@ -164,6 +164,26 @@ h1{
     overflow: hidden;
 }
 
+modal{
+    position: fixed;
+    width: 70%;
+    height: 50%;
+    background-color: #520;
+
+    left: calc(50vw - 70% + 70% / 2);
+    top: calc(150vh);
+
+    z-index: 100000;
+
+    border-radius: 25px;
+
+    box-shadow: 0 0 10px black;
+}
+
+
+
+
+
 input, textarea{
     width: 100%;
     padding: 10px;

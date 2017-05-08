@@ -18,20 +18,20 @@
 
     </head>
     <body style="display: none;">
-            <div id="header">
+        <div id="header">
 
-                <h1 class="title" id="title"> Bespist </h1>
-                <div id="usernav">
-                    <div id="login"> Logg inn </div>
-                    <div id="register"> Registrer </div>
-                </div>
-
-                <div class="selection" id="subject">
-                    <div for="home">Hjem</div>
-                    <div for="order">Turer</div>
-                    <div for="finish">Handlekurv</div>
-                </div>
+            <h1 class="title" id="title"> Bespist </h1>
+            <div id="usernav">
+                <div id="login" class="modalbutton" for="login-modal"> Logg inn </div>
+                <div id="register" class="modalbutton" for="register-modal"> Registrer </div>
             </div>
+
+            <div class="selection" id="subject">
+                <div for="home">Hjem</div>
+                <div for="order">Turer</div>
+                <div for="finish">Handlekurv</div>
+            </div>
+        </div>
         <div id="global">
 
 
@@ -94,5 +94,12 @@
 
             </div>
         </div>
+
+        <modal id="login-modal" title="Logg inn">
+            ejsoifs
+        </modal>
+        <modal id="register-modal" title="Registrer deg">
+            jsoiufdhsa
+        </modal>
     </body>
 </html>
