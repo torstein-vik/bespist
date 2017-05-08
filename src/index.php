@@ -18,8 +18,6 @@
 
     </head>
     <body style="display: none;">
-        <div id="global">
-
             <div id="header">
 
                 <h1 class="title" id="title"> Bespist </h1>
@@ -31,6 +29,8 @@
                     <div for="finish">Handlekurv</div>
                 </div>
             </div>
+        <div id="global">
+
 
             <div id="content">
                 <div id="home" for="subject" class="selectionelement">

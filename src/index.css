@@ -1,28 +1,44 @@
-html{
+html, body{
     font-family: 'Verdana';
     font-family: 'Open Sans', sans-serif;
-    background-color: rgb(107, 120, 138);
+
+    margin: 0;
+    height: 100%;
+
+    color: black;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+}
 
 a{
     color: black;
 }
 
 #header{
-    height: calc();
+    /*height: calc(20vh - 20px - 20px);*/
+    width: 100%;
+    background-color: aliceblue;
+
+    flex: 0 1 auto;
+
+    line-height: 2;
+
+    box-shadow: 0 0 10px darkslategray;
+
+    z-index: 1000;
 }
 
 #global{
-    margin: 10px auto;
+    flex: 1 1 auto;
+
 
     padding-bottom: 20px;
 
     border-radius: 3px;
 
-    width: 60%;
-    min-width: 720px;
-    max-width: 860px;
 
     background-color: white;
 
@@ -31,7 +47,7 @@ a{
     overflow-y: scroll;
     overflow-x: hidden;
 
-    height: calc(100vh - 20px - 20px - 20px - 200px);
+    height: calc(100vh - 20px - 20px - 20vh);
 }
 
 #global::-webkit-scrollbar {
@@ -50,7 +66,7 @@ a{
 
 h1{
     font-family: Oxygen;
-    font-size: 400%;
+    font-size: 200%;
     font-weight: 100;
 
     padding: 10px 0;
@@ -58,6 +74,7 @@ h1{
     text-align: center;
     width:100%;
     margin: 0;
+    line-height: 1;
 }
 
 
@@ -66,6 +83,8 @@ h1{
     padding-top: 0;
 
     line-height: 2;
+
+    background-color: white;
 }
 
 .selection{
