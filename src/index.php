@@ -21,7 +21,10 @@
             <div id="header">
 
                 <h1 class="title" id="title"> Bespist </h1>
-
+                <div id="usernav">
+                    <div id="login"> Logg inn </div>
+                    <div id="register"> Registrer </div>
+                </div>
 
                 <div class="selection" id="subject">
                     <div for="home">Hjem</div>
