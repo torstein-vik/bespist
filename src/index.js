@@ -425,7 +425,7 @@ function SendEpost(email){
 function initModalSystem(){
     $(".modalbutton").click(function(){
         $("modal").animate({top: 100});
-        $("body > div").css({filter: "blur(5px)"});
+        $("body > div").css({filter: "brightness(70%)"});
         $("coverpane").css({"z-index":10000});
     });
 
