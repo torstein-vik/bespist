@@ -429,7 +429,13 @@ function initModalSystem(){
         var closebutton = $("<div>");
 
         header.html($(this).attr("title"));
-        closebutton.html("X");
+        closebutton.html("&#10005;");
+
+        closebutton.click(() => {
+            $(this).animate({top: "150vh"});
+            $("body > div").css({filter: "brightness(100%)"});
+            $("coverpane").css({"z-index":-1});
+        });
 
         modalheader.append(header);
         modalheader.append(closebutton);
@@ -438,7 +444,7 @@ function initModalSystem(){
     });
 
     $(".modalbutton").click(function(){
-        $("modal").animate({top: 100});
+        $("modal#" + $(this).attr("for")).animate({top: 100});
         $("body > div").css({filter: "brightness(70%)"});
         $("coverpane").css({"z-index":10000});
     });

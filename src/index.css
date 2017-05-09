@@ -164,6 +164,16 @@ h1{
     overflow: hidden;
 }
 
+coverpane{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    pointer-events: none;
+}
+
 modal{
     position: fixed;
     width: 70%;
@@ -179,10 +189,52 @@ modal{
     padding: 25px;
 
     box-shadow: 0 0 2px gray;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
 }
 
 modalheader{
+    display: flex;
+    justify-content: space-between;
 
+
+
+    background-color: #4C4;
+    z-index: 100001;
+
+    margin: -25px -25px 0 -25px;
+
+    border-radius: 25px 25px 0 0;
+
+    padding: 10px 20px 10px 20px;
+
+    margin-bottom: 10px;
+
+    box-shadow: 0 0 2px #4C4;
+}
+
+modalheader > h2{
+    margin: 0;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 100;
+}
+
+modalheader > div{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@keyframes modalcrossfade{
+    from {color: black;}
+    50% {color: #4C4;}
+    to {color: white;}
+}
+
+
+modalheader > div:hover{
+    animation: modalcrossfade 250ms forwards;
 }
 
 input, textarea{
