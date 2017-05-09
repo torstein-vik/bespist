@@ -423,11 +423,24 @@ function SendEpost(email){
 
 
 function initModalSystem(){
+    $("modal").each(function(){
+        var modalheader = $("<modalheader>");
+        var header      = $("<h2>");
+        var closebutton = $("<div>");
+
+        header.html($(this).attr("title"));
+        closebutton.html("X");
+
+        modalheader.append(header);
+        modalheader.append(closebutton);
+
+        $(this).prepend(modalheader);
+    });
+
     $(".modalbutton").click(function(){
         $("modal").animate({top: 100});
         $("body > div").css({filter: "brightness(70%)"});
         $("coverpane").css({"z-index":10000});
     });
-
 
 }
