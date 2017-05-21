@@ -18,10 +18,6 @@ $(function(){
         $("body").show();
     });
 
-
-    // Initialises the system responsible for booking rooms
-    initRoomBuying();
-
     // Refresh the basket-page
     refreshBasket();
 
@@ -53,6 +49,10 @@ function loadURL(url){
             $("#purchase").show();
             $("#subject > div[for=purchase]").addClass("active");
             break;
+        default:
+            $("#404page").show();
+            break;
+
     }
 }
 
@@ -130,7 +130,7 @@ function loadProducts(){
             $("#order-selection").append("<div id='button"+index+"' for='product"+index+"'>"+product.name+"</div>");
 
             // Add the actual tab div, with product.name as title and product.description as a description.
-            $("#order").append("<div class='selectionelement' for='order-selection' id='product"+index+"'><h2>"+product.name+"</h2>"+product.description+"<p></div>");
+            $("#products").append("<div class='selectionelement' for='order-selection' id='product"+index+"'><h2>"+product.name+"</h2>"+product.description+"<p></div>");
 
             // Add the order button, which opens a div with a form (using tab-system)
             $("#product"+index).append('<div class="selection" id="order'+index+'"><div for="order'+index+'-content" style="width:100%;">Bestill ('+product.price+' kr)</div></div>');
@@ -240,53 +240,6 @@ function addToBasket(object){
     refreshBasket();
 }
 
-// Initialises the system responsible for booking rooms
-function initRoomBuying(){
-    // Make the date today by default
-    $("#roomform > input[type=date]")[0].valueAsDate = new Date();
-
-    // Select the input that provides the number of guests, and when it's value is changed...
-    $("#roomform > input[type=number]").on('change', function(){
-        // update the price on the submit button
-        $("#roomform > input[type=submit]").val("Legg til i handlekurv (" + (roomprice*$(this).val()) + " kr)")
-    });
-
-    // When the room form is submitted...
-    $("#roomform").on('submit', function(e){
-
-        // Stop the browser from actually doing something with the form
-        e.preventDefault();
-
-        // Pull out the date and amount of persons from the form
-        var date = $("#roomform > input[type=date]")[0].valueAsDate;
-        var amt  = $("#roomform > input[type=number]")[0].valueAsNumber;
-
-        // Make sure amt > 0
-        if(amt < 1){
-            alert("Du må bestille for minst en person!");
-            return;
-        }
-
-        // Make sure date is a friday
-        // new Date(2017, 0, 6) is the first friday this year, done this way so that it will work in different locales (e.g. the US, where sunday is the first day of the week)
-        if(date.getDay() != new Date(2017, 0, 6).getDay()){
-            alert("Du må bestille for en fredag!");
-            return;
-        }
-
-        // Make sure the date is in the future
-        if(date < new Date()){
-            alert("Du må bestille noe i framtiden!");
-            return;
-        }
-
-        // Add the order to the basket
-        addToBasket({type: "room", date: date, amt: amt});
-
-        // Simulate a click on the tab to close it
-        $("#room-button").click();
-    });
-}
 
 // Refresh the basket-page
 function refreshBasket(){
@@ -317,7 +270,7 @@ function refreshBasket(){
         var amt = order.type == "room" ? order.amt : "-";
 
         // Calculate price
-        var price = order.type == "room" ? order.amt * roomprice : products[order.product].price;
+        var price = 0;//order.type == "room" ? order.amt * roomprice : products[order.product].price;
 
         // Add price to total price
         totalprice += price;
@@ -389,7 +342,7 @@ function SendBestilling(e){
         var amt = order.type == "room" ? order.amt : "-";
 
         // Calculate price
-        var price = order.type == "room" ? order.amt * roomprice : products[order.product].price;
+        var price = 0; //order.type == "room" ? order.amt * roomprice : products[order.product].price;
 
         // Add price to total price
         totalprice += price;
