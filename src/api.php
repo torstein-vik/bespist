@@ -29,7 +29,7 @@
                 },
                 {
                     "name": "Blæja",
-                    "description": "Bli med på en gruppetur til Blæja! Denne fantastiske fjelltoppen tar omtrent 4 timer, og koster omlag 1500. Utsikten fra toppen er vidunderlig, og skiføret er fantastisk. Om det er snø legger vi selvfølgelig opp til mulighet for å gå på ski. Her er en video: <video src='media/blæja.mp4' controls></video> <img src='media/blæja.jpg' class='content-img'>",
+                    "description": "Bli med på en gruppetur til Blæja! ",
                     "price": 1500
                 },
                 {
