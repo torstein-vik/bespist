@@ -77,7 +77,7 @@
                 </div>
 
                 <div id="404page" for="subject" class="selectionelement">
-                    <h2 style="text-align: center;">404! We could not locate this page!</h2>
+                    <h2 style="text-align: center;">404! Vi fant ikke siden du ba om!</h2>
                 </div>
             </div>
         </div>
