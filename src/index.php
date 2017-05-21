@@ -18,6 +18,7 @@
 
     </head>
     <body style="display: none;">
+    <coverpane style="z-index: -1"> </coverpane>
         <div id="header">
 
             <h1 class="title" id="title"> Bespist </h1>
@@ -85,10 +86,20 @@
 
     </body>
     <modal id="login-modal" title="Logg inn">
-        ejsoifs
+        <form id="login">
+            <input type="text" id="username" placeholder="Brukernavn">
+            <input type="password" id="password" placeholder="Passord">
+            <input type="submit" id="name" value="Logg inn!">
+        </form>
+
     </modal>
     <modal id="register-modal" title="Registrer deg">
-        jsoiufdhsa
+        <form id="register">
+            <input type="text" id="username" placeholder="Brukernavn">
+            <input type="password" id="password1" placeholder="Passord">
+            <input type="password" id="password2" placeholder="Bekreft passord">
+            <input type="submit" id="name" value="Registrer deg!">
+        </form>
+
     </modal>
-    <coverpane style="z-index: -1"> </coverpane>
 </html>
