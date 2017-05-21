@@ -23,6 +23,9 @@ $(function(){
 
     initModalSystem();
 
+    initLoginSystem();
+    initRegisterSystem();
+
     // On submit method for complete purchase form
     $("#completepurchase").on('submit', SendBestilling);
 
@@ -30,6 +33,14 @@ $(function(){
     startSlideshow();
 
 });
+
+function initLoginSystem(){
+
+}
+
+function initRegisterSystem(){
+
+}
 
 function loadURL(url){
     switch(url){
