@@ -46,8 +46,8 @@ function loadURL(url){
             $("#subject > div[for=products]").addClass("active");
             break;
         case "cart":
-            $("#purchase").show();
-            $("#subject > div[for=purchase]").addClass("active");
+            $("#finish").show();
+            $("#subject > div[for=finish]").addClass("active");
             break;
         default:
             $("#404page").show();
