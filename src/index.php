@@ -28,7 +28,7 @@
 
             <div class="selection" id="subject">
                 <div for="home">Hjem</div>
-                <div for="order">Turer</div>
+                <div for="products">Vårt utvalg</div>
                 <div for="finish">Handlekurv</div>
             </div>
         </div>
@@ -41,26 +41,11 @@
                     <img id="slide">
                     <div id="slide_text"></div><p><br>
 
-                    Skal du på ferie til Sunnmøre? Her hos Villa Norangdal spesialiserer vi i guidede turer og overnatting!<p><br>
-                    Vi organiserer turer til Kvitegga, Slogen, Blæja, og Skruven. Vi driver på året rundt, og på vinteren bruker vi ski! <p><br>
+                    Vil du ha mat? Det serverer vi!<p><br>
+
                 </div>
-                <div id="order" for="subject" class="selectionelement">
-                    Vi tilbyr overnatting og turer. Du kan kjøpe disse uavhengig av hverandre, men om du vil overnatte samme helg som du går tur, pass på å velge riktige datoer! Klikk på knappen under for å se overnattingsmuligheter, og på knappene under der igjen for turtilbud. Overnatting inkluderer så klart mat, og koster 2800kr per person.<p>
-                    <div class="selection" id="rooms">
-                        <div for="room" id="room-button" style="width:100%;"> Overnattingsalternativ</div>
-                    </div>
-                    <div id="room" class="selectionelement" for="rooms">
-                        <form id="roomform">
-                            Velg den fredagen dere ønsker skiweekend:
-                            <input type="date">
-                            Hvor mange personer er dere?
-                            <input type="number" value=1 min=0>
-                            <input type="submit" value="Legg til i handlekurv (2800 kr)">
-                        </form>
-                    </div>
-
-                    Her er våre fantastiske turtilbud:<br><p>
-
+                <div id="products" for="subject" class="selectionelement">
+                    Her er vårt utvalg av matvarer:<br><p>
                     <div class="selection" id="order-selection">
                     </div>
                 </div>
@@ -69,7 +54,6 @@
                         <table>
                             <thead>
                                 <td>Navn</td>
-                                <td>Dato</td>
                                 <td>Antall</td>
                                 <td>Pris</td>
                                 <td>Avbestill</td>
@@ -92,6 +76,9 @@
                     </div>
                 </div>
 
+                <div id="404page" for="subject" class="selectionelement">
+                    <h2 style="text-align: center;">404! We could not locate this page!</h2>
+                </div>
             </div>
         </div>
 
