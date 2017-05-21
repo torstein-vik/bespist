@@ -176,11 +176,11 @@ coverpane{
 
 modal{
     position: fixed;
-    width: 70%;
+    width: 40%;
     height: 50%;
     background-color: white;
 
-    left: calc(50vw - 70% + 70% / 2);
+    left: calc(50vw - 40% + 40% / 2);
     top: calc(150vh);
 
     z-index: 100000;
