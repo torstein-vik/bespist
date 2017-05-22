@@ -14,7 +14,22 @@
 
     $type = $_GET["type"];
 
-    if($type == "products"){
+    if ($type == "checklogin"){
+        if ($auth){
+        ?>
+            {
+                "status": 1
+                "username": "<?php echo $_SESSION["user"]?>"
+            }
+        <?php
+        } else {
+        ?>
+            {
+                "status": 0
+            }
+        <?php
+        }
+    } else if ($type == "products"){
         ?>
             [
                 {
@@ -46,6 +61,7 @@
         ?>
             {
                 "success": true
+                "message": "OK"
             }
         <?php
     }
