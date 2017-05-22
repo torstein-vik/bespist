@@ -43,7 +43,7 @@
                     <img id="slide">
                     <div id="slide_text"></div><p><br>
 
-                    Vil du ha mat? Det serverer vi!<p><br>
+                    Vil du ha mat? Det serverer vi!<p><br>Gå til 'Vårt utvalg', legg alle rettene du vil ha og til hvilke datoer, og på 'Handlekurv' bestiller du alt på en gang! Du trenger en bruker for å bestille, men handlekurven krever ikke dette.<p><br>Vi holder til på kaia i Bergen, men kan sende mat rundt hele landet. Vi kan kontaktes på mobil - +4712345678 - og på epost - kontakt@bespist.no.
 
                 </div>
                 <div id="products" for="subject" class="selectionelement">
