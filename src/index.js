@@ -279,18 +279,6 @@ function loadProducts(){
                 // Load in the basket
                 var basket = JSON.parse(localStorage.getItem("basket")) || {content: []};
 
-                // Find all product-orders that have the same date, and make sure there are fewer than two.
-                if(basket.content.filter((ob) => new Date(ob.date).toDateString() == date.toDateString() && ob.type == "product").length >= 2){
-                    alert("Du har brukt opp alle våre guider den dagen! Venneligst velg en annen dato.");
-                    return;
-                }
-
-                // Find all product-orders that have the same date and are for the same product, and make sure there are fewer than one.
-                if(basket.content.filter((ob) => ob.type == "product" && new Date(ob.date).toDateString() == date.toDateString() && ob.product == index ).length >= 1){
-                    alert("Du har allerede reservert den turen den dagen. Venneligst velg en annen dato.");
-                    return;
-                }
-
                 // Add the order to the basket
                 addToBasket({type: "product", date: date, product: index});
 
