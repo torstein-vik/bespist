@@ -35,7 +35,32 @@ $(function(){
 });
 
 function initLoginSystem(){
+    $("#login").on("submit", (e) => {
+        e.preventDefault();
 
+        console.log("hi");
+
+        var username, password;
+        username = $("#login #username").val();
+        password = $("#login #password").val();
+
+        $.ajax({
+            url: "api.php?type=login",
+            method: "POST",
+            data: {
+                username: username,
+                password: password
+            }
+        }).done((json) => {
+            var result = JSON.parse(json);
+
+            if (result.success){
+
+            } else {
+
+            }
+        });
+    });
 }
 
 function initRegisterSystem(){
