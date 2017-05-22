@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $conn = new mysqli("localhost", "root", "");
+    $conn = new mysqli("localhost", "root", "bespist");
     if ($conn->connect_errno) {
         printf("Connect failed: %s\n", $mysqli->connect_error);
         return;
@@ -37,7 +37,14 @@
             }
         <?php
     } else if ($type == "products"){
-        ?>
+        $products = $conn->$query("SELECT * FROM products");
+
+        echo "[";
+        foreach($products as $product){
+
+        }
+        echo "]"
+        <?
             [
                 {
                     "name": "Kvitegga",
