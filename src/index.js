@@ -81,6 +81,7 @@ function loadLogin(){
 }
 
 function initLoginSystem(){
+    $("#login").off();
     $("#login").on('submit', (e) => {
         e.preventDefault();
 
@@ -99,9 +100,9 @@ function initLoginSystem(){
             var result = JSON.parse(json);
 
             if (result.success){
-
+                loadLogin();
             } else {
-
+                alert(result.message);
             }
         });
     });
