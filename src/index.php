@@ -52,6 +52,7 @@
                         <table>
                             <thead>
                                 <td>Navn</td>
+                                <td>Dato</td>
                                 <td>Antall</td>
                                 <td>Pris</td>
                             </thead>
