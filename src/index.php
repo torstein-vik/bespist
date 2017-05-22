@@ -18,7 +18,6 @@
 
     </head>
     <body style="display: none;">
-    <coverpane style="z-index: -1"> </coverpane>
         <div id="header">
 
             <h1 class="title" id="title"> Bespist </h1>

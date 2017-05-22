@@ -422,8 +422,7 @@ function initModalSystem(){
 
         closebutton.click(() => {
             $(this).animate({top: "150vh"});
-            $("body > div").css({filter: "brightness(100%)"});
-            $("coverpane").css({"z-index":-1});
+            $("body > div").css({"filter": "brightness(100%)", "pointer-events":"all"});
         });
 
         modalheader.append(header);
@@ -434,8 +433,7 @@ function initModalSystem(){
 
     $(".modalbutton").click(function(){
         $("modal#" + $(this).attr("for")).animate({top: 100});
-        $("body > div").css({filter: "brightness(70%)"});
-        $("coverpane").css({"z-index":10000});
+        $("body > div").css({"filter": "brightness(30%)", "pointer-events":"none"});
     });
 
 }
