@@ -35,10 +35,8 @@ $(function(){
 });
 
 function initLoginSystem(){
-    $("#login").on("submit", (e) => {
+    $("#login").on('submit', (e) => {
         e.preventDefault();
-
-        console.log("hi");
 
         var username, password;
         username = $("#login #username").val();
