@@ -45,37 +45,26 @@
         <?php
         return;
     } else if ($type == "products"){
-        /*$products = $conn->query("SELECT * FROM products");
+        $products = $conn->query("SELECT * FROM plates");
 
-        echo "[";
-        foreach($products as $product){
+        $objs = [];
+        while($product = $products->fetch_assoc()){
+            $obj = "";
 
+            $obj .= "{";
+            $obj .= '"id": "'.$product["plateid"].'",';
+            $obj .= '"name": "'.$product["name"].'",';
+            $obj .= '"description": "'.$product["content"].'",';
+            $obj .= '"price": '.$product["price"].',';
+            $obj .= '"image": "'.$product["previewimg"].'",';
+            $obj .= '"category": "'.$product["category"].'"';
+            $obj .= "}";
+
+            $objs[] = $obj;
         }
-        echo "]";*/
-        ?>
-        [
-            {
-                "name": "Kvitegga",
-                "description": "Denne siden er under bearbeidelse. Turen tar 9 timer.",
-                "price": 2500
-            },
-            {
-                "name": "Slogen",
-                "description": "Denne siden er under bearbeidelse. Turen tar 8 timer.",
-                "price": 2200
-            },
-            {
-                "name": "Blæja",
-                "description": "Bli med på en gruppetur til Blæja! ",
-                "price": 1500
-            },
-            {
-                "name": "Skruven",
-                "description": "Denne siden er under bearbeidelse. Turen tar 5 timer.",
-                "price": 1700
-            }
-        ]
-        <?php
+
+        echo "[".join(", ", $objs)."]";
+
     } else if ($type == "login"){
         $username = $_POST["username"];
         $password = $_POST["password"];
