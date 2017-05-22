@@ -39,6 +39,15 @@
                 }
             ]
         <?php
+    } else if ($type == "login"){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        ?>
+            {
+                "success": true
+            }
+        <?php
     }
 
 
