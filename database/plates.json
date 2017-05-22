@@ -1,0 +1,62 @@
+{
+    "starter":[
+        {
+            "name": "reker",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 100
+        },
+        {
+            "name": "reker1",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 100
+        },
+        {
+            "name": "reker2",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 432
+        }
+    ],
+    "main":[
+        {
+            "name": "reker3",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 214
+        },
+        {
+            "name": "reker4",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 6542
+        },
+        {
+            "name": "reker5",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 6524
+        }
+    ],
+    "dessert":[
+        {
+            "name": "reker6",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 54600
+        },
+        {
+            "name": "reker7",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 600
+        },
+        {
+            "name": "reker8",
+            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
+            "previewimg": "/res/placeholder.png",
+            "price": 900
+        }
+    ]
+}
