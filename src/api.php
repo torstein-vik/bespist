@@ -65,6 +65,21 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
+        $_SESSION["user"] = $username;
+
+        ?>
+            {
+                "success": true,
+                "message": "OK"
+            }
+        <?php
+    } else if ($type == "register"){
+        $username = $_POST["username"];
+        $password = $_POST["password1"];
+        $password = $_POST["password2"];
+
+        $_SESSION["user"] = $username;
+
         ?>
             {
                 "success": true,
