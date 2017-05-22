@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Oxygen"    rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="index.css"/>
+        <link rel="icon" href="favicon.ico" />
 
         <script src="gallery.json"> </script>
         <script src="index.js"> </script>
