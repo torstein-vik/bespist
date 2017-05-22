@@ -307,3 +307,7 @@ input[type='submit']{
     margin: 10px;
     width: calc(100% - 20px);
 }
+
+#products > h3 {
+    text-align: center;
+}

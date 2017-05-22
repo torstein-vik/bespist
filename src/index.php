@@ -47,13 +47,13 @@
 
                 </div>
                 <div id="products" for="subject" class="selectionelement">
-                    Her er vårt utvalg av foretter:<br><p>
+                    <h3>Her er vårt utvalg av foretter:</h3>
                     <div class="selection" id="order-selection-starter" group="order-selection">
                     </div>
-                    Her er vårt utvalg av hovedretter:<br><p>
+                    <h3>Her er vårt utvalg av hovedretter:</h3>
                     <div class="selection" id="order-selection-main" group="order-selection">
                     </div>
-                    Her er vårt utvalg av desserter:<br><p>
+                    <h3>Her er vårt utvalg av desserter:</h3>
                     <div class="selection" id="order-selection-dessert" group="order-selection">
                     </div>
 
