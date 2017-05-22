@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Oxygen"    rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="index.css"/>
-        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="res/logo_small.ico"/>
 
         <script src="gallery.json"> </script>
         <script src="genders.json"> </script>
@@ -21,6 +21,8 @@
     </head>
     <body style="display: none;">
         <div id="header">
+
+            <img src="res/logo_large.svg">
 
             <h1 class="title" id="title"> Bespist </h1>
             <div id="usernav">

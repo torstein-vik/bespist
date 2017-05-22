@@ -19,6 +19,8 @@ a{
 
 #header{
     /*height: calc(20vh - 20px - 20px);*/
+    position: relative;
+
     width: 100%;
     background-color: aliceblue;
 
@@ -75,6 +77,14 @@ h1{
     width:100%;
     margin: 0;
     line-height: 1;
+}
+
+#header > img{
+    width: auto;
+    height: 80%;
+    margin: 10px;
+
+    position: absolute;
 }
 
 #usernav{
