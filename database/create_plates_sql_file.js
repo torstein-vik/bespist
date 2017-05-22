@@ -37,7 +37,7 @@ plates.dessert.forEach(function(plate){
 spaces = "                                                                          ";
 
 sql += "\n-- Adding plates\n";
-sql += "INSERT INTO `plates` (name, content, previewimg, price, category) VALUES ('" + platesList.join("'),\n" + spaces + "('") + "');\n";
+sql += "INSERT INTO `plates` (name, content, previewimg, price, category) VALUES (\"" + platesList.join("\"),\n" + spaces + "(\"") + "\");\n";
 
 console.log(sql);
 

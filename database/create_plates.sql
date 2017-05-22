@@ -15,13 +15,13 @@ ALTER TABLE `plates` AUTO_INCREMENT = 1;
 
 
 
--- Adding attractions
-INSERT INTO `bespist` (name, content, previewimg, price, category) VALUES ('reker", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "100", "starter'),
-                                                                          ('reker1", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "100", "starter'),
-                                                                          ('reker2", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "432", "starter'),
-                                                                          ('reker3", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "214", "main'),
-                                                                          ('reker4", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "6542", "main'),
-                                                                          ('reker5", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "6524", "main'),
-                                                                          ('reker6", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "54600", "dessert'),
-                                                                          ('reker7", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "600", "dessert'),
-                                                                          ('reker8", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "900", "dessert');
+-- Adding plates
+INSERT INTO `plates` (name, content, previewimg, price, category) VALUES ("reker", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "100", "starter"),
+                                                                          ("reker1", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "100", "starter"),
+                                                                          ("reker2", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "432", "starter"),
+                                                                          ("reker3", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "214", "main"),
+                                                                          ("reker4", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "6542", "main"),
+                                                                          ("reker5", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "6524", "main"),
+                                                                          ("reker6", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "54600", "dessert"),
+                                                                          ("reker7", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "600", "dessert"),
+                                                                          ("reker8", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "900", "dessert");
