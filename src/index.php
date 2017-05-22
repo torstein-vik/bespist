@@ -34,10 +34,10 @@
                 <div for="finish">Handlekurv</div>
             </div>
         </div>
-        <div id="global">
+        <div id="global" class="selection-scroller">
 
 
-            <div id="content">
+            <div id="content" >
                 <div id="home" for="subject" class="selectionelement">
 
                     <img id="slide">

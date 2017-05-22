@@ -211,8 +211,6 @@ function initSelectionSystem(){
                 $(this).addClass('active');
 
 
-
-
                 // Using this group, slide up the corresponing tabs (takes aprox. 1 second), and when done...
                 $(".selectionelement[for=" + parentid + "]").slideUp().promise().done(() => {
 
@@ -221,6 +219,10 @@ function initSelectionSystem(){
 
                         // Slide down the correct tab
                         tab.slideDown();
+
+                        $('.selection-scroller').animate({
+                            scrollTop: tab.offset().top - 10
+                        });
                     }
                 });
 
