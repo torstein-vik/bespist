@@ -22,8 +22,6 @@
 
             <h1 class="title" id="title"> Bespist </h1>
             <div id="usernav">
-                <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
-                <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
             </div>
 
             <div class="selection" id="subject">

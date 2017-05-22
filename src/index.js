@@ -2,7 +2,7 @@
 $(function(){
 
     // Load all the products into the DOM and hide all tabs
-    loadProducts().done(() => {
+    load().done(() => {
         // Hide all tabs
         $(".selectionelement").hide();
 
@@ -33,6 +33,36 @@ $(function(){
     startSlideshow();
 
 });
+
+function load(){
+    return $.when(loadProducts(), loadLogin());
+}
+
+function loadLogin(){
+    var def = new $.Deferred();
+
+    $.ajax({
+        url: "api.php?type=checklogin"
+    }).done((json) => {
+        var result = JSON.parse(json);
+
+        if (result.status == 1){
+             $("#usernav").html(`
+                <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
+                <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
+            `);
+        } else {
+             $("#usernav").html(`
+                <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
+                <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
+            `);
+        }
+
+        def.resolve();
+    });
+
+    return def;
+}
 
 function initLoginSystem(){
     $("#login").on('submit', (e) => {
