@@ -18,7 +18,7 @@
         if ($auth){
         ?>
             {
-                "status": 1
+                "status": 1,
                 "username": "<?php echo $_SESSION["user"]?>"
             }
         <?php
@@ -67,7 +67,7 @@
 
         ?>
             {
-                "success": true
+                "success": true,
                 "message": "OK"
             }
         <?php
