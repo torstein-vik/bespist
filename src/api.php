@@ -80,15 +80,59 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        $_SESSION["user"] = $username;
-
-        ?>
+        if(!(isset($username) && $username != "" && isset($password) && $password != "")){
+            ?>
             {
-                "success": true,
-                "message": "OK"
+                "success": false,
+                "message": "Vennligst fyll ut alle feltene"
             }
-        <?php
+            <?php
+            return;
+
+        }
+
+        $username = $conn->escape_string($username);
+        $password = $conn->escape_string($password);
+
+        $username_find = $conn->query("SELECT * FROM users WHERE username = '".$username."'");
+
+        if($username_find->num_rows == 0){
+            ?>
+            {
+                "success": false,
+                "message": "Vi finner ikke dette brukernavnet!"
+            }
+            <?php
+            return;
+        }
+
+        $user = $username_find->fetch_assoc();
+
+        $salt = bin2hex($user['passsalt']);
+
+        $hash = hash('sha256', $password.$salt);
+        if($hash == bin2hex($user["passhash"])){
+                $_SESSION['userid'] = $user["userid"];
+                $_SESSION['user'] = $username;
+
+                ?>
+                {
+                    "success": true,
+                    "message": "OK"
+                }
+                <?php
+                return;
+            } else {
+                ?>
+                {
+                    "success": false,
+                    "message": "Feil passord"
+                }
+                <?php
+                return;
+            }
         return;
+
     } else if ($type == "register"){
         $username = $_POST["username"];
         $password1 = $_POST["password1"];
@@ -97,10 +141,10 @@
         if(!(isset($username) && $username != "" && isset($password1) && $password1 != "" && isset($password2) && $password2 != "")){
 
             ?>
-                {
-                    "success": false,
-                    "message": "Vennligst fyll ut alle feltene"
-                }
+            {
+                "success": false,
+                "message": "Vennligst fyll ut alle feltene"
+            }
             <?php
             return;
 
