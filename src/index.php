@@ -12,6 +12,7 @@
         <link rel="icon" href="favicon.ico" />
 
         <script src="gallery.json"> </script>
+        <script src="genders.json"> </script>
         <script src="index.js"> </script>
         <script>
         var url = "<?php echo (isset($_GET["page"]) ? $_GET["page"] : "");?>";
@@ -85,17 +86,20 @@
     </body>
     <modal id="login-modal" title="Logg inn">
         <form id="login">
-            <input type="text" id="username" placeholder="Brukernavn">
-            <input type="password" id="password" placeholder="Passord">
+            <input type="text" id="username" placeholder="Brukernavn" required>
+            <input type="password" id="password" placeholder="Passord" required>
             <input type="submit" id="name" value="Logg inn!">
         </form>
 
     </modal>
     <modal id="register-modal" title="Registrer deg">
         <form id="register">
-            <input type="text" id="username" placeholder="Brukernavn">
-            <input type="password" id="password1" placeholder="Passord">
-            <input type="password" id="password2" placeholder="Bekreft passord">
+            <input type="text" id="username" placeholder="Brukernavn" required>
+            <select id="genders" required>
+                <option value="" hidden selected default disabled>Velg kjønn</option>
+            </select>
+            <input type="password" id="password1" placeholder="Passord" required>
+            <input type="password" id="password2" placeholder="Bekreft passord" required>
             <input type="submit" id="name" value="Registrer deg!">
         </form>
 

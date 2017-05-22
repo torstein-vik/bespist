@@ -24,6 +24,8 @@ $(function(){
     // Refresh the basket-page
     refreshBasket();
 
+    initGenders();
+
     // On submit method for complete purchase form
     $("#completepurchase").on('submit', SendBestilling);
 
@@ -81,6 +83,12 @@ function loadLogin(){
     });
 
     return def;
+}
+
+function initGenders(){
+    genders.forEach((gender, index) => {
+        $("#register #genders").append("<option value='" + index + "'>" + gender + "</option>");
+    });
 }
 
 function initLoginSystem(){

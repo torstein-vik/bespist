@@ -233,11 +233,20 @@ modalheader > div:hover{
     animation: modalcrossfade 250ms forwards;
 }
 
-input, textarea{
+input, textarea, select{
     width: 100%;
     padding: 10px;
     font-size: 110%;
     margin-top: 10px;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+
+option {
+    color: black;
 }
 
 input[type='submit']{
