@@ -200,17 +200,20 @@ function initSelectionSystem(){
             // Make this the active tab
             $(this).addClass('active');
 
+            // Retrive the group of the tab-button parent, i.e. which 'group' of tabs it is from
+            var parentid = $(this).parent().attr('group');
+
             // If there is another active tab...
-            if($(this).parent().has('.active').length > 0){
+            if($(".selection[group="+parentid+"]").children('.active').length > 1){
 
                 // Make all those other tab buttons inactive
-                $(this).siblings().removeClass('active');
-
-                // Retrive the id of the tab-button parent, i.e. which 'group' of tabs it is from
-                var parentid = $(this).parent().attr('id');
+                $(".selection[group="+parentid+"]").children().removeClass('active');
+                $(this).addClass('active');
 
 
-                // Using this id, slide up the corresponing tabs (takes aprox. 1 second), and when done...
+
+
+                // Using this group, slide up the corresponing tabs (takes aprox. 1 second), and when done...
                 $(".selectionelement[for=" + parentid + "]").slideUp().promise().done(() => {
 
                     // and if this tab-button is still active (no other tab button has been clicked during the animation),
@@ -240,7 +243,6 @@ function loadProducts(){
         url:"api.php?type=products"
     }).done((json) => {
         var products = JSON.parse(json);
-        console.log(products);
 
 
         // For all products (see products.json), do...

@@ -28,7 +28,7 @@
             <div id="usernav">
             </div>
 
-            <div class="selection" id="subject">
+            <div class="selection" id="subject" group="subject">
                 <div for="home">Hjem</div>
                 <div for="products">Vårt utvalg</div>
                 <div for="finish">Handlekurv</div>
@@ -47,9 +47,17 @@
 
                 </div>
                 <div id="products" for="subject" class="selectionelement">
-                    Her er vårt utvalg av matvarer:<br><p>
-                    <div class="selection" id="order-selection">
+                    Her er vårt utvalg av foretter:<br><p>
+                    <div class="selection" id="order-selection-starter" group="order-selection">
                     </div>
+                    Her er vårt utvalg av hovedretter:<br><p>
+                    <div class="selection" id="order-selection-main" group="order-selection">
+                    </div>
+                    Her er vårt utvalg av desserter:<br><p>
+                    <div class="selection" id="order-selection-dessert" group="order-selection">
+                    </div>
+
+
                 </div>
                 <div id="finish" for="subject" class="selectionelement">
                     <div id="basket">
