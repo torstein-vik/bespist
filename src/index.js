@@ -51,18 +51,20 @@ function loadLogin(){
             `);
 
             $("#usernav #logoutbutton").click(() => {
-                $.ajax({
-                    url: "api.php?type=logout"
-                }).done((json) => {
-                    var result = JSON.parse(json);
+                if(window.confirm("Er du sikker på at du vil logge ut?")){
+                    $.ajax({
+                        url: "api.php?type=logout"
+                    }).done((json) => {
+                        var result = JSON.parse(json);
 
-                    if(result.status == 1){
+                        if(result.status == 1){
 
-                        loadLogin();
-                    } else {
-                        alert("Error when logging out. Please try again");
-                    }
-                });
+                            loadLogin();
+                        } else {
+                            alert("Error when logging out. Please try again");
+                        }
+                    });
+                }
             });
         } else {
             $("#usernav").html(`
@@ -70,6 +72,7 @@ function loadLogin(){
                 <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
             `);
 
+            initModalSystemHandlers();
             initLoginSystem();
             initRegisterSystem();
         }
@@ -101,6 +104,7 @@ function initLoginSystem(){
 
             if (result.success){
                 loadLogin();
+                $("#login-modal modalheader div").click();
             } else {
                 alert(result.message);
             }
@@ -109,7 +113,34 @@ function initLoginSystem(){
 }
 
 function initRegisterSystem(){
+    $("#register").off();
+    $("#register").on('submit', (e) => {
+        e.preventDefault();
 
+        var username, password1, password2;
+        username = $("#register #username").val();
+        password1 = $("#register #password1").val();
+        password2 = $("#register #password2").val();
+
+        $.ajax({
+            url: "api.php?type=register",
+            method: "POST",
+            data: {
+                username: username,
+                password1: password1,
+                password2: password2
+            }
+        }).done((json) => {
+            var result = JSON.parse(json);
+
+            if (result.success){
+                loadLogin();
+                $("#register-modal modalheader div").click();
+            } else {
+                alert(result.message);
+            }
+        });
+    });
 }
 
 function loadURL(url){
@@ -476,9 +507,13 @@ function initModalSystem(){
         $(this).prepend(modalheader);
     });
 
+    initModalSystemHandlers();
+}
+
+function initModalSystemHandlers(){
+    $(".modalbutton").off();
     $(".modalbutton").click(function(){
         $("modal#" + $(this).attr("for")).animate({top: 100});
         $("body > div").css({"filter": "brightness(30%)", "pointer-events":"none"});
     });
-
 }
