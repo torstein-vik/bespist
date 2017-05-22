@@ -230,6 +230,9 @@ function initSelectionSystem(){
                 // Else just slide down the tab
                 tab.slideDown();
 
+                $('.selection-scroller').animate({
+                    scrollTop: tab.offset().top - 10
+                });
             }
 
 
