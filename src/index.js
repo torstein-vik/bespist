@@ -249,34 +249,34 @@ function loadProducts(){
         products.forEach((product, index) => { // product is the product and index is the index of the product in the array
 
             // Add the tab-button with opening product<index> and with product.name as text
-            $("#order-selection").append("<div id='button"+index+"' for='product"+index+"'>"+product.name+"</div>");
+            $("#order-selection-"+product.category).append("<div class='productbutton' id='button"+product.id+"' for='product"+product.id+"'><img src="+product.image+">"+product.name+"</div>");
 
             // Add the actual tab div, with product.name as title and product.description as a description.
-            $("#products").append("<div class='selectionelement' for='order-selection' id='product"+index+"'><h2>"+product.name+"</h2>"+product.description+"<p></div>");
+            $("#products").append("<div class='selectionelement' for='order-selection' id='product"+product.id+"'><h2>"+product.name+"</h2>"+product.description+"<p></div>");
 
             // Add the order button, which opens a div with a form (using tab-system)
-            $("#product"+index).append('<div class="selection" id="order'+index+'"><div for="order'+index+'-content" style="width:100%;">Bestill ('+product.price+' kr)</div></div>');
+            $("#product"+product.id).append('<div class="selection" id="order'+product.id+'"><div for="order'+product.id+'-content" style="width:100%;">Bestill ('+product.price+' kr)</div></div>');
 
             // Add the div containing the order-form which is opened by the order button.
-            $("#product"+index).append('<div for="order'+index+'" class="selectionelement" id="order'+index+'-content"><form></form></div>');
+            $("#product"+product.id).append('<div for="order'+product.id+'" class="selectionelement" id="order'+product.id+'-content"><form></form></div>');
 
             // Add various input-fields to the form above
-            $("#order"+index+"-content > form").append('Hvilken dato vil du gå?');
-            $("#order"+index+"-content > form").append('<input type="date" id="date'+index+'"><br>');
-            $("#order"+index+"-content > form").append('<input type="submit" value="Legg til i handlekurv!"><br>');
+            $("#order"+product.id+"-content > form").append('Hvilken dato vil du gå?');
+            $("#order"+product.id+"-content > form").append('<input type="date" id="date'+product.id+'"><br>');
+            $("#order"+product.id+"-content > form").append('<input type="submit" value="Legg til i handlekurv!"><br>');
 
             // Put 'today' into the date field
-            $("#date" + index).get(0).valueAsDate = new Date();
+            $("#date" + product.id).get(0).valueAsDate = new Date();
 
             // When this form is submitted...
-            $("#order"+index+"-content > form").on('submit', (e) => {
+            $("#order"+product.id+"-content > form").on('submit', (e) => {
 
                 // Stop the browser from actually sending the form somewhere
                 e.preventDefault();
 
                 // Retrive the date
 
-                var date = $("#date" + index)[0].valueAsDate;
+                var date = $("#date" + product.id)[0].valueAsDate;
 
                 // Make sure the date is in the future
                 if(date < new Date()){
@@ -290,11 +290,11 @@ function loadProducts(){
                 var basket = JSON.parse(localStorage.getItem("basket")) || {content: []};
 
                 // Add the order to the basket
-                addToBasket({type: "product", date: date, product: index});
+                addToBasket({type: "product", date: date, product: product.id});
 
                 // Simulate a click on the product-tab to close it
 
-                $("#button"+index).click();
+                $("#button"+product.id).click();
 
             });
         });
