@@ -29,6 +29,13 @@
             }
         <?php
         }
+    } else if ($type == "logout"){
+        unset($_SESSION["user"]);
+        ?>
+            {
+                "status": 1
+            }
+        <?php
     } else if ($type == "products"){
         ?>
             [

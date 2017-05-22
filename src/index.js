@@ -9,9 +9,12 @@ $(function(){
         // Initialises the system responsible for tabs
         initSelectionSystem();
 
+        initModalSystem();
 
         // Load the specified URL
         loadURL(url);
+
+
 
 
         // Show the previously hidden body (this is to prevent ugly loading)
@@ -21,7 +24,6 @@ $(function(){
     // Refresh the basket-page
     refreshBasket();
 
-    initModalSystem();
 
     initLoginSystem();
     initRegisterSystem();
@@ -47,12 +49,27 @@ function loadLogin(){
         var result = JSON.parse(json);
 
         if (result.status == 1){
-             $("#usernav").html(`
-                <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
-                <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
+            $("#usernav").html(`
+                <div>Velkommen, ${result.username}</div>
+                <div id="logoutbutton"> Logg ut </div>
             `);
+
+            $("#usernav #logoutbutton").click(() => {
+                $.ajax({
+                    url: "api.php?type=logout"
+                }).done((json) => {
+                    var result = JSON.parse(json);
+
+                    if(result.status == 1){
+
+                        loadLogin();
+                    } else {
+                        alert("Error when logging out. Please try again");
+                    }
+                });
+            });
         } else {
-             $("#usernav").html(`
+            $("#usernav").html(`
                 <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
                 <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
             `);
