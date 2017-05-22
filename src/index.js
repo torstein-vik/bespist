@@ -24,10 +24,6 @@ $(function(){
     // Refresh the basket-page
     refreshBasket();
 
-
-    initLoginSystem();
-    initRegisterSystem();
-
     // On submit method for complete purchase form
     $("#completepurchase").on('submit', SendBestilling);
 
@@ -73,6 +69,9 @@ function loadLogin(){
                 <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
                 <div id="registerbutton" class="modalbutton" for="register-modal"> Registrer </div>
             `);
+
+            initLoginSystem();
+            initRegisterSystem();
         }
 
         def.resolve();
