@@ -54,7 +54,6 @@
                                 <td>Navn</td>
                                 <td>Antall</td>
                                 <td>Pris</td>
-                                <td>Avbestill</td>
                             </thead>
                             <tbody>
 
