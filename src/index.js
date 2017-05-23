@@ -1,3 +1,5 @@
+var products;
+
 // init-function
 $(function(){
 
@@ -11,6 +13,11 @@ $(function(){
 
         initModalSystem();
 
+        initGenders();
+
+        // Refresh the basket-page
+        refreshBasket();
+
         // Load the specified URL
         loadURL(url);
 
@@ -21,10 +28,7 @@ $(function(){
         $("body").show();
     });
 
-    // Refresh the basket-page
-    refreshBasket();
 
-    initGenders();
 
     // On submit method for complete purchase form
     $("#completepurchase").on('submit', SendBestilling);
@@ -68,6 +72,10 @@ function loadLogin(){
                     });
                 }
             });
+
+
+            $("#completepurchase-loginmessage").hide();
+            $("#completepurchase").show();
         } else {
             $("#usernav").html(`
                 <div id="loginbutton" class="modalbutton" for="login-modal"> Logg inn </div>
@@ -77,6 +85,8 @@ function loadLogin(){
             initModalSystemHandlers();
             initLoginSystem();
             initRegisterSystem();
+            $("#completepurchase-loginmessage").show();
+            $("#completepurchase").hide();
         }
 
         def.resolve();
@@ -247,7 +257,7 @@ function loadProducts(){
     $.ajax({
         url:"api.php?type=products"
     }).done((json) => {
-        var products = JSON.parse(json);
+        products = JSON.parse(json);
 
 
         // For all products (see products.json), do...
@@ -268,6 +278,9 @@ function loadProducts(){
             // Add various input-fields to the form above
             $("#order"+product.id+"-content > form").append('Hvilken dato vil du gå?');
             $("#order"+product.id+"-content > form").append('<input type="date" id="date'+product.id+'"><br>');
+
+            $("#order"+product.id+"-content > form").append('Hvor mange av denne retten vil dere ha?');
+            $("#order"+product.id+"-content > form").append('<input type="number" id="amt'+product.id+'" min=1 required><br>');
             $("#order"+product.id+"-content > form").append('<input type="submit" value="Legg til i handlekurv!"><br>');
 
             // Put 'today' into the date field
@@ -282,6 +295,7 @@ function loadProducts(){
                 // Retrive the date
 
                 var date = $("#date" + product.id)[0].valueAsDate;
+                var amt = $("#amt" + product.id).val();
 
                 // Make sure the date is in the future
                 if(date < new Date()){
@@ -295,7 +309,7 @@ function loadProducts(){
                 var basket = JSON.parse(localStorage.getItem("basket")) || {content: []};
 
                 // Add the order to the basket
-                addToBasket({type: "product", date: date, product: product.id});
+                addToBasket({type: "product", date: date, product: product.id, amt: amt});
 
                 // Simulate a click on the product-tab to close it
 
@@ -338,6 +352,8 @@ function startSlideshow(){
 
 // Add an object to the basket
 function addToBasket(object){
+    console.log(object);
+
     // Either load the basket from local storage, or create a new one
 
     var basket = JSON.parse(localStorage.getItem("basket")) || {content:[]};
@@ -375,20 +391,21 @@ function refreshBasket(){
         row = $("<tr> </tr>");
         rows[index] = row;
 
-        // Extract the name, which is either a product or a room
-        var name = order.type == "room" ? "Rom" : products[order.product].name;
+        var product = products.find((x) => x.id == order.product);
+
+        // Extract the name, which is a product
+        var name = product.name;
 
         // Extract the date
         var date = new Date(order.date).toDateString();
 
         // Extract the amount in case of room, and - else.
-        var amt = order.type == "room" ? order.amt : "-";
+        var amt = order.amt;
 
-        // Calculate price
-        var price = 0;//order.type == "room" ? order.amt * roomprice : products[order.product].price;
+        var price = product.price;
 
         // Add price to total price
-        totalprice += price;
+        totalprice += price * amt;
 
         // Create a button to remove an item from the basket
         var remove = $("<td class='remove'> X </td>");
@@ -396,10 +413,12 @@ function refreshBasket(){
         // If this button is clicked, remove the associated row
         remove.click(() => {
             if(window.confirm("Er du sikker?")){
-                rows[index].remove();
+
+                var basket = JSON.parse(localStorage.getItem("basket")) || {content: []};
                 basket.content.splice(index, 1);
                 localStorage.setItem("basket", JSON.stringify(basket));
 
+                refreshBasket();
             }
         });
 
@@ -408,7 +427,7 @@ function refreshBasket(){
         row.append("<td>" + name + "</td>");
         row.append("<td>" + date + "</td>");
         row.append("<td>" + amt + "</td>");
-        row.append("<td>" + price + "</td>");
+        row.append("<td>" + price + "kr</td>");
         row.append(remove);
 
         // Append the row to the baket table
@@ -419,7 +438,7 @@ function refreshBasket(){
 }
 
 // Collects all the data, empties the basket, and emails the data.
-function SendBestilling(e){
+function createOrder(e){
     // Stop javascrpt from actually submitting anything
     e.preventDefault();
 

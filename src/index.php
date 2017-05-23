@@ -66,7 +66,7 @@
                                 <td>Navn</td>
                                 <td>Dato</td>
                                 <td>Antall</td>
-                                <td>Pris</td>
+                                <td>Pris pr. Enhet</td>
                             </thead>
                             <tbody>
 
@@ -77,12 +77,13 @@
 
                         <h2>Fullfør kjøpet</h2>
 
-                        <form id="completepurchase">
-                            <input type="text" id="name" placeholder = "Navn">
+                        <form id="completepurchase" style="display:none">
                             <input type="text" id="address" placeholder = "Adresse">
                             <textarea rows=5 id="message" placeholder="Valgfri melding til oss"></textarea>
                             <input type="submit" value="Gjennomfør!">
                         </form>
+
+                        <h3 id="completepurchase-loginmessage"> Du må logge inn før du kan fullføre kjøp! </h3>
                     </div>
                 </div>
 
