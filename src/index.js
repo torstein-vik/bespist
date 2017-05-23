@@ -276,7 +276,7 @@ function loadProducts(){
             $("#product"+product.id).append('<div for="order'+product.id+'" class="selectionelement" id="order'+product.id+'-content"><form></form></div>');
 
             // Add various input-fields to the form above
-            $("#order"+product.id+"-content > form").append('Hvilken dato vil du gå?');
+            $("#order"+product.id+"-content > form").append('Hvilken dato?');
             $("#order"+product.id+"-content > form").append('<input type="date" id="date'+product.id+'"><br>');
 
             $("#order"+product.id+"-content > form").append('Hvor mange av denne retten vil dere ha?');
