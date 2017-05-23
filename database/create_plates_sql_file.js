@@ -34,7 +34,7 @@ plates.dessert.forEach(function(plate){
     platesList.push([plate.name, plate.content, plate.previewimg, plate.price, "dessert"].join('", "'));
 });
 
-spaces = "                                                                          ";
+spaces = "                                                                         ";
 
 sql += "\n-- Adding plates\n";
 sql += "INSERT INTO `plates` (name, content, previewimg, price, category) VALUES (\"" + platesList.join("\"),\n" + spaces + "(\"") + "\");\n";
