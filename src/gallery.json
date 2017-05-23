@@ -1,6 +1,12 @@
 var gallery = [
     {
-        "path": "res/placeholder.png",
-        "text": "Placeholder"
+        "path": "res/forrett2.jpg",
+        "text": "Laks"
+    },{
+        "path": "res/hovedrett2.jpg",
+        "text": "Hamburger"
+    },{
+        "path": "res/dessert2.jpg",
+        "text": "Sjokoladekake"
     }
 ]
