@@ -226,7 +226,7 @@
         $query = $conn->query("INSERT INTO `users`  (username, passhash, passsalt, privilege) VALUES ('".$username."',0x".$hash.",0x".$salt.",".$privilege.");");
 
         if($query){
-            $userid = $conn->query("SELECT users.userid FROM `mitt-feriested`.`users` WHERE username = '".$username."'")->fetch_assoc();
+            $userid = $conn->query("SELECT userid FROM users WHERE username = '".$username."'")->fetch_assoc();
 
             $_SESSION['userid'] = $userid["userid"];
             $_SESSION['user'] = $username;
