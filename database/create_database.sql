@@ -36,9 +36,8 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `orderid` INT NOT NULL AUTO_INCREMENT,
   `userid` INT NOT NULL,
   `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `comment` VARCHAR(45) NOT NULL,
+  `comment` TEXT NOT NULL,
   `address` VARCHAR(45) NOT NULL,
-  `content` TEXT NOT NULL,
   PRIMARY KEY (`orderid`),
   FOREIGN KEY (`userid`)
     REFERENCES `users` (`userid`))
