@@ -492,8 +492,20 @@ function completePurchase(e){
 function sendOrder(order){
     console.log(order);
 
-    // Alert user
-    //alert("Gratulerer! Bestillingen har blitt sendt!");
+    $.ajax({
+        url: "api.php?type=order",
+        method: "POST",
+        data: order
+    }).done((json) => {
+        var result = JSON.parse(json);
+
+        if(result.status == 1){
+            alert("Gratulerer! Bestillingen har blitt sendt!");
+        } else {
+            alert("Det oppto et problem! " + result.message);
+        }
+    })
+
 }
 
 
