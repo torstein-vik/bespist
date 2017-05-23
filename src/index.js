@@ -476,16 +476,6 @@ function completePurchase(e){
 
     // Sending it
     sendOrder(orderObject);
-
-    // Empty the basket
-    localStorage.setItem("basket", JSON.stringify({content:[]}));
-    refreshBasket();
-
-    // Empty the fields
-    var name = $("#completepurchase > #name").val("");
-    var address = $("#completepurchase > #address").val("");
-    var message = $("#completepurchase > #message").val("");
-
 }
 
 // Simulated version of sending an email. Just prints it to console for now.
@@ -501,6 +491,14 @@ function sendOrder(order){
 
         if(result.status == 1){
             alert("Gratulerer! Bestillingen har blitt sendt!");
+
+            // Empty the basket
+            localStorage.setItem("basket", JSON.stringify({content:[]}));
+            refreshBasket();
+
+            // Empty the fields
+            var address = $("#completepurchase > #address").val("");
+            var message = $("#completepurchase > #message").val("");
         } else {
             alert("Det oppto et problem! " + result.message);
         }

@@ -9,7 +9,7 @@
 
     $conn -> set_charset("utf8");
 
-    $auth = isset($_SESSION["user"]);
+    $auth = isset($_SESSION["user"]) && isset($_SESSION["userid"]);
 
 
 
@@ -19,7 +19,59 @@
 
     $type = $_GET["type"];
 
-    if ($type == "checklogin"){
+    if ($type == "order"){
+        if(!(isset($_POST["address"]) && isset($_POST["message"]) && isset($_POST["orders"]) && $_POST["address"] != "")){
+            ?>
+            {
+                "status": 0,
+                "message": "Felt mangler, eller er tomme"
+            }
+            <?php
+            return;
+        }
+
+        if(!$auth){
+            ?>
+            {
+                "status": 0,
+                "message": "Du er ikke innlogget!"
+            }
+            <?php
+            return;
+        }
+
+        $address = $conn->escape_string($_POST["address"]);
+        $message = $conn->escape_string($_POST["message"]);
+
+        $conn->query("INSERT INTO orders (userid, timestamp, comment, address) VALUES ('".$_SESSION["userid"]."', NOW(), '$message', '$address')");
+        $order_result = $conn->query("SELECT LAST_INSERT_ID() FROM orders");
+        print $conn->error;
+
+        $orderid = $order_result->fetch_assoc()["LAST_INSERT_ID()"];
+
+        foreach($_POST["orders"] as $order){
+
+            $plateid = $conn->escape_string($order["id"]);
+            $amount = $conn->escape_string($order["amt"]);
+            $date = $conn->escape_string($order["date"]);
+
+            $conn->query("INSERT INTO orderlines (orderid, plateid, amount, date) VALUES ('$orderid', '$plateid', '$amount', '$date')");
+
+        }
+
+        if($conn->error == ""){
+            ?>
+            {
+                "status": 1,
+                "message": "OK"
+            }
+            <?php
+            return;
+        } else {
+            print $conn->error;
+        }
+
+    } else if ($type == "checklogin"){
         if ($auth){
         ?>
             {
