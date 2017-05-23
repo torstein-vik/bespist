@@ -78,7 +78,7 @@
                         <h2>Fullfør kjøpet</h2>
 
                         <form id="completepurchase" style="display:none">
-                            <input type="text" id="address" placeholder = "Adresse">
+                            <input type="text" id="address" placeholder = "Adresse" required>
                             <textarea rows=5 id="message" placeholder="Valgfri melding til oss"></textarea>
                             <input type="submit" value="Gjennomfør!">
                         </form>

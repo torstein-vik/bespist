@@ -30,8 +30,8 @@ $(function(){
 
 
 
-    // On submit method for complete purchase form
-    $("#completepurchase").on('submit', SendBestilling);
+    // On-submit method for complete purchase form
+    $("#completepurchase").on('submit', completePurchase);
 
     // Start the slideshow
     startSlideshow();
@@ -352,8 +352,6 @@ function startSlideshow(){
 
 // Add an object to the basket
 function addToBasket(object){
-    console.log(object);
-
     // Either load the basket from local storage, or create a new one
 
     var basket = JSON.parse(localStorage.getItem("basket")) || {content:[]};
@@ -438,18 +436,13 @@ function refreshBasket(){
 }
 
 // Collects all the data, empties the basket, and emails the data.
-function createOrder(e){
+function completePurchase(e){
     // Stop javascrpt from actually submitting anything
     e.preventDefault();
 
     // Collect from the form:
-    var name = $("#completepurchase > #name").val();
     var address = $("#completepurchase > #address").val();
     var message = $("#completepurchase > #message").val();
-
-    // Forming the email:
-    var email = "The following order came in: \n\nName:\n" + name + "\n\nAddress:\n"+address+"\n\nMessage:\n" + message + "\n\nOrders:";
-
 
     // Load the basket
     var basket = JSON.parse(localStorage.getItem("basket"));
@@ -459,36 +452,30 @@ function createOrder(e){
         return;
     }
 
-    // Total price
-    var totalprice = 0;
+    var orderObject = {
+        address: address,
+        message: message,
+        orders:  []
+    }
 
     // For each element...
     basket.content.forEach((order, index) => {
-        email += "\n";
-
-        // Extract the name, which is either a product or a room
-        var name = order.type == "room" ? "Rom" : products[order.product].name;
 
         // Extract the date
-        var date = new Date(order.date).toDateString();
+        var date = new Date(order.date).toISOString().slice(0, 19).replace('T', ' ');
 
-        // Extract the amount in case of room, and - else.
-        var amt = order.type == "room" ? order.amt : "-";
+        // Extract the amount
+        var amt = order.amt;
 
-        // Calculate price
-        var price = 0; //order.type == "room" ? order.amt * roomprice : products[order.product].price;
-
-        // Add price to total price
-        totalprice += price;
-
-        // Add all to email
-        email += name + ", " + date + (order.type == "room" ? ", "+amt+" personer" : "") + ", til en pris på " + price
+        orderObject.orders.push({
+            id:   order.product,
+            date: date,
+            amt:  amt
+        });
     });
 
-    email += "\n\nTotal pris: \n" + totalprice;
-
     // Sending it
-    SendEpost(email);
+    sendOrder(orderObject);
 
     // Empty the basket
     localStorage.setItem("basket", JSON.stringify({content:[]}));
@@ -499,13 +486,14 @@ function createOrder(e){
     var address = $("#completepurchase > #address").val("");
     var message = $("#completepurchase > #message").val("");
 
-    // Alert user
-    alert("Gratulerer! Bestillingen har blitt sendt!")
 }
 
 // Simulated version of sending an email. Just prints it to console for now.
-function SendEpost(email){
-    console.log(email);
+function sendOrder(order){
+    console.log(order);
+
+    // Alert user
+    //alert("Gratulerer! Bestillingen har blitt sendt!");
 }
 
 
