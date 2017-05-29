@@ -1,62 +1,62 @@
 {
     "starter":[
         {
-            "name": "reker",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 100
+            "name": "Squash",
+            "content": "Squash med noe funky hvite greier inni",
+            "previewimg": "/res/forrett1.jpg",
+            "price": 99
         },
         {
-            "name": "reker1",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 100
+            "name": "Laks",
+            "content": "Fine røykede lakseskiver, med masse grønt støff oppå",
+            "previewimg": "/res/forrett2.jpg",
+            "price": 149
         },
         {
-            "name": "reker2",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 432
+            "name": "Aspargesbacon",
+            "content": "Asparges med bacon rundt. Blir det virkelig bedre?",
+            "previewimg": "/res/forrett3.jpg",
+            "price": 99
         }
     ],
     "main":[
         {
-            "name": "reker3",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 214
+            "name": "Spaghetti",
+            "content": "Sprudlende spaghetti med masse støff oppi",
+            "previewimg": "/res/hovedrett1.jpg",
+            "price": 199
         },
         {
-            "name": "reker4",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 6542
+            "name": "Hamburger",
+            "content": "Svær hamburger med ost og kjøtt",
+            "previewimg": "/res/hovedrett2.jpg",
+            "price": 299
         },
         {
-            "name": "reker5",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 6524
+            "name": "Spareribs",
+            "content": "Ribber med masse støff på sida",
+            "previewimg": "/res/hovedrett3.jpg",
+            "price": 999
         }
     ],
     "dessert":[
         {
-            "name": "reker6",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 54600
+            "name": "Bløtkake",
+            "content": "Kake med krem og san bbløtkakestøff",
+            "previewimg": "/res/dessert1.jpeg",
+            "price": 599
         },
         {
-            "name": "reker7",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 600
+            "name": "Sjokoladekake",
+            "content": "Sjokoladekake med sjokolade og glassur",
+            "previewimg": "/res/dessert2.jpg",
+            "price": 599
         },
         {
-            "name": "reker8",
-            "content": "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?",
-            "previewimg": "/res/placeholder.png",
-            "price": 900
+            "name": "Crème Brûlée",
+            "content": "Crème Brûlée med masse Crème og masse Brûlée",
+            "previewimg": "/res/dessert3.jpg",
+            "price": 999
         }
     ]
 }

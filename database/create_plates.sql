@@ -16,12 +16,12 @@ ALTER TABLE `plates` AUTO_INCREMENT = 1;
 
 
 -- Adding plates
-INSERT INTO `plates` (name, content, previewimg, price, category) VALUES ("reker", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "100", "starter"),
-                                                                         ("reker1", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "100", "starter"),
-                                                                         ("reker2", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "432", "starter"),
-                                                                         ("reker3", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "214", "main"),
-                                                                         ("reker4", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "6542", "main"),
-                                                                         ("reker5", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "6524", "main"),
-                                                                         ("reker6", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "54600", "dessert"),
-                                                                         ("reker7", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "600", "dessert"),
-                                                                         ("reker8", "Nystekte reker i kokende olje, med hvitløk. Blir det bedre?", "/res/placeholder.png", "900", "dessert");
+INSERT INTO `plates` (name, content, previewimg, price, category) VALUES ("Squash", "Squash med noe funky hvite greier inni", "/res/forrett1.jpg", "99", "starter"),
+                                                                         ("Laks", "Fine røykede lakseskiver, med masse grønt støff oppå", "/res/forrett2.jpg", "149", "starter"),
+                                                                         ("Aspargesbacon", "Asparges med bacon rundt. Blir det virkelig bedre?", "/res/forrett3.jpg", "99", "starter"),
+                                                                         ("Spaghetti", "Sprudlende spaghetti med masse støff oppi", "/res/hovedrett1.jpg", "199", "main"),
+                                                                         ("Hamburger", "Svær hamburger med ost og kjøtt", "/res/hovedrett2.jpg", "299", "main"),
+                                                                         ("Spareribs", "Ribber med masse støff på sida", "/res/hovedrett3.jpg", "999", "main"),
+                                                                         ("Bløtkake", "Kake med krem og san bbløtkakestøff", "/res/dessert1.jpeg", "599", "dessert"),
+                                                                         ("Sjokoladekake", "Sjokoladekake med sjokolade og glassur", "/res/dessert2.jpg", "599", "dessert"),
+                                                                         ("Crème Brûlée", "Crème Brûlée med masse Crème og masse Brûlée", "/res/dessert3.jpg", "999", "dessert");
